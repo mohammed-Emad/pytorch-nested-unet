@@ -63,10 +63,12 @@ class Dataset(torch.utils.data.Dataset):
             print("path xf: ",xf)
             if os.path.isfile(xf):
                mask.append(cv2.imread(xf, cv2.IMREAD_GRAYSCALE)[..., None])
+        print("===============================================================================================")
         print("len(mask): ", len(mask))
         print("img_id",img_id)
+        print("-----------------------------------------------------------------------------------------------")
         mask = np.dstack(mask)
-
+        print("###############################################################################################")
         if self.transform is not None:
             augmented = self.transform(image=img, mask=mask)
             img = augmented['image']
