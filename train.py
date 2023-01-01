@@ -20,6 +20,7 @@ import losses
 from dataset import Dataset
 from metrics import iou_score
 from utils import AverageMeter, str2bool
+import albumentations as albu
 
 ARCH_NAMES = archs.__all__
 LOSS_NAMES = losses.__all__
@@ -250,7 +251,7 @@ def main():
     train_img_ids, val_img_ids = train_test_split(img_ids, test_size=0.2, random_state=41)
 
     train_transform = Compose([
-        transforms.RandomRotate90(),
+        albu.RandomRotate90(),
         transforms.Flip(),
         OneOf([
             transforms.HueSaturationValue(),
