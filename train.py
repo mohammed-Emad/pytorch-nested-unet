@@ -252,7 +252,7 @@ def main():
 
     train_transform = Compose([
         albu.RandomRotate90(),
-        transforms.Flip(),
+        albu.Flip(),
         OneOf([
             transforms.HueSaturationValue(),
             transforms.RandomBrightness(),
