@@ -62,7 +62,7 @@ class Dataset(torch.utils.data.Dataset):
             xf = os.path.join(self.mask_dir, str(i),img_id + self.mask_ext)
             if os.path.isfile(xf):
                mask.append(cv2.imread(xf, cv2.IMREAD_GRAYSCALE)[..., None])
-        print(len(mask))
+        print("len(mask): ", len(mask))
         print("img_id",img_id)
         mask = np.dstack(mask)
 
