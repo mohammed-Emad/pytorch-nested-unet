@@ -258,13 +258,13 @@ def main():
             transforms.RandomBrightness(),
             transforms.RandomContrast(),
         ], p=1),
-        transforms.Resize(config['input_h'], config['input_w']),
-        transforms.Normalize(),
+        albu.Resize(config['input_h'], config['input_w']),
+        albu.Normalize(),
     ])
 
     val_transform = Compose([
-        transforms.Resize(config['input_h'], config['input_w']),
-        transforms.Normalize(),
+        albu.Resize(config['input_h'], config['input_w']),
+        albu.Normalize(),
     ])
 
     train_dataset = Dataset(
