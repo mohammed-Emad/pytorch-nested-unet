@@ -58,6 +58,7 @@ class Dataset(torch.utils.data.Dataset):
         img = cv2.imread(os.path.join(self.img_dir, img_id + self.img_ext))
 
         mask = []
+        print("self.num_classes: ", self.num_classes)
         for i in range(self.num_classes):
             xf = os.path.join(self.mask_dir, str(i),img_id + self.mask_ext)
             print("path xf: ",xf)
